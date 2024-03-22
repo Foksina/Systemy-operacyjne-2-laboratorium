@@ -38,8 +38,7 @@ fi
 # ale jest plikiem regularnym, to przenosimy go do TARGET_DIR
 # ale jest katalogiem, to kopiujemy go do TARGET_DIR z zawartością
 for ENTRY in "$SOURCE_DIR"/*; do                                    # jeżeli jakiegoś pliku (ktory jest w SOURCE_DIR) 
-    FILENAME =$(basename "$ENTRY")
-    if [[ ! -f "$RM_LIST" || ! $(grep -q "$FILENAME" "$RM_LIST") ]] # nie ma na liście  (lub RM_LIST nie istnieje = tego pliku nie ma na liscie) 
+    if [[ ! -f "$RM_LIST" || ! $(grep -q "$(basename "$ENTRY")" "$RM_LIST") ]] # nie ma na liście  (lub RM_LIST nie istnieje = tego pliku nie ma na liscie) 
         then
         if [[ -f "$ENTRY" ]]                                        # ale jest plikiem regularnym 
             then               
