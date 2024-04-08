@@ -28,7 +28,7 @@ if [[ -e "$MY_DIR" && -d "$MY_DIR" ]]; then
     for ITEM in "$MY_DIR"/*.exe; do
     if [ -f "$ITEM" ]; then
         chmod a+x "$ITEM"
-        chmod u+s "$ITEM" # ustawienie bitu setuid, aby plik zawsze był uruchamiany z uprawnieniami właściciela --> -rwsr-xr-x suid.exe
+        chmod u+s "$ITEM" # ustawienie bitu setuid, aby plik zawsze był uruchamiany z uprawnieniami właściciela --> -rwsr-xr-x .... suid.exe
     fi
 done
 else
